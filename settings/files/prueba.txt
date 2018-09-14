@@ -1,0 +1,2 @@
+camilo;123;3007093263;fff;bogota;CC;1010
+andrea;4432;3007093263;frdf;bogota;CC;1010
