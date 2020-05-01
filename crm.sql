@@ -12,11 +12,11 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 
--- Volcando estructura de base de datos para crm_bpo
-CREATE DATABASE IF NOT EXISTS `crm_bpo` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `crm_bpo`;
+-- Volcando estructura de base de datos para crm
+CREATE DATABASE IF NOT EXISTS `crm` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `crm`;
 
--- Volcando estructura para tabla crm_bpo.crmconf_reportes
+-- Volcando estructura para tabla crm.crmconf_reportes
 CREATE TABLE IF NOT EXISTS `crmconf_reportes` (
   `id_report` int(11) NOT NULL AUTO_INCREMENT,
   `report` varchar(50) DEFAULT NULL,
@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `crmconf_reportes` (
   PRIMARY KEY (`id_report`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla crm_bpo.crmconf_reportes: ~5 rows (aproximadamente)
+-- Volcando datos para la tabla crm.crmconf_reportes: ~5 rows (aproximadamente)
 DELETE FROM `crmconf_reportes`;
 /*!40000 ALTER TABLE `crmconf_reportes` DISABLE KEYS */;
 INSERT INTO `crmconf_reportes` (`id_report`, `report`, `modal_id`, `url`, `estado`) VALUES
@@ -41,7 +41,7 @@ INSERT INTO `crmconf_reportes` (`id_report`, `report`, `modal_id`, `url`, `estad
 	(5, 'Reporte Back Office Paso 3 AVANTEL OUT1', 'report_back3', 'report_back3', 1);
 /*!40000 ALTER TABLE `crmconf_reportes` ENABLE KEYS */;
 
--- Volcando estructura para tabla crm_bpo.crmgest_back1
+-- Volcando estructura para tabla crm.crmgest_back1
 CREATE TABLE IF NOT EXISTS `crmgest_back1` (
   `id_back1` int(11) NOT NULL AUTO_INCREMENT,
   `id_modulo` int(11) NOT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `crmgest_back1` (
   PRIMARY KEY (`id_back1`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla crm_bpo.crmgest_back1: ~9 rows (aproximadamente)
+-- Volcando datos para la tabla crm.crmgest_back1: ~9 rows (aproximadamente)
 DELETE FROM `crmgest_back1`;
 /*!40000 ALTER TABLE `crmgest_back1` DISABLE KEYS */;
 INSERT INTO `crmgest_back1` (`id_back1`, `id_modulo`, `linea`, `sim`, `evidente`, `asignado`, `anexo`, `oportunidad`, `compra`, `cotizacion`, `fca`, `fce`) VALUES
@@ -81,7 +81,7 @@ INSERT INTO `crmgest_back1` (`id_back1`, `id_modulo`, `linea`, `sim`, `evidente`
 	(84, 1, 2, '211', '212', '213', '214', '', '', '', '', '');
 /*!40000 ALTER TABLE `crmgest_back1` ENABLE KEYS */;
 
--- Volcando estructura para tabla crm_bpo.crmpa_calificaciones
+-- Volcando estructura para tabla crm.crmpa_calificaciones
 CREATE TABLE IF NOT EXISTS `crmpa_calificaciones` (
   `id_calif` int(11) NOT NULL AUTO_INCREMENT,
   `id_cl` int(11) DEFAULT NULL,
@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS `crmpa_calificaciones` (
   PRIMARY KEY (`id_calif`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla crm_bpo.crmpa_calificaciones: ~57 rows (aproximadamente)
+-- Volcando datos para la tabla crm.crmpa_calificaciones: ~57 rows (aproximadamente)
 DELETE FROM `crmpa_calificaciones`;
 /*!40000 ALTER TABLE `crmpa_calificaciones` DISABLE KEYS */;
 INSERT INTO `crmpa_calificaciones` (`id_calif`, `id_cl`, `id_serv`, `id_agente`, `fec_ini`, `fec_fin`, `calif`, `needs_back`, `perfil`, `back_agent_calif`) VALUES
@@ -215,14 +215,14 @@ INSERT INTO `crmpa_calificaciones` (`id_calif`, `id_cl`, `id_serv`, `id_agente`,
 	(57, 26, 7, 13, '2018-06-07 18:49:10', '2018-06-07 18:55:30', 'TELEFONO NO EXISTE', 0, 2, 0);
 /*!40000 ALTER TABLE `crmpa_calificaciones` ENABLE KEYS */;
 
--- Volcando estructura para tabla crm_bpo.crmpa_ciud
+-- Volcando estructura para tabla crm.crmpa_ciud
 CREATE TABLE IF NOT EXISTS `crmpa_ciud` (
   `id` int(11) DEFAULT NULL,
   `nombre` varchar(254) DEFAULT NULL,
   `depto` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla crm_bpo.crmpa_ciud: ~1.232 rows (aproximadamente)
+-- Volcando datos para la tabla crm.crmpa_ciud: ~1.232 rows (aproximadamente)
 DELETE FROM `crmpa_ciud`;
 /*!40000 ALTER TABLE `crmpa_ciud` DISABLE KEYS */;
 INSERT INTO `crmpa_ciud` (`id`, `nombre`, `depto`) VALUES
@@ -2467,7 +2467,7 @@ INSERT INTO `crmpa_ciud` (`id`, `nombre`, `depto`) VALUES
 	(1120, 'CUMARIBO', 33);
 /*!40000 ALTER TABLE `crmpa_ciud` ENABLE KEYS */;
 
--- Volcando estructura para tabla crm_bpo.crmpa_clientes
+-- Volcando estructura para tabla crm.crmpa_clientes
 CREATE TABLE IF NOT EXISTS `crmpa_clientes` (
   `id_cl` int(11) NOT NULL AUTO_INCREMENT,
   `id_servicio` int(11) NOT NULL DEFAULT '0',
@@ -2486,7 +2486,7 @@ CREATE TABLE IF NOT EXISTS `crmpa_clientes` (
   PRIMARY KEY (`id_cl`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla crm_bpo.crmpa_clientes: ~48 rows (aproximadamente)
+-- Volcando datos para la tabla crm.crmpa_clientes: ~48 rows (aproximadamente)
 DELETE FROM `crmpa_clientes`;
 /*!40000 ALTER TABLE `crmpa_clientes` DISABLE KEYS */;
 INSERT INTO `crmpa_clientes` (`id_cl`, `id_servicio`, `nombre`, `telefono`, `celular`, `email`, `ciudad`, `tipo_documento`, `documento`, `isread`, `intentos`, `asesor`, `again`, `seleccionado`) VALUES
@@ -2587,13 +2587,13 @@ INSERT INTO `crmpa_clientes` (`id_cl`, `id_servicio`, `nombre`, `telefono`, `cel
 	(48, 7, 'andrea', '4432', '3007093263', 'frdf', 'bogota', 'CC', '1010', 'Y', 0, 0, NULL, 'Y');
 /*!40000 ALTER TABLE `crmpa_clientes` ENABLE KEYS */;
 
--- Volcando estructura para tabla crm_bpo.crmpa_deptos
+-- Volcando estructura para tabla crm.crmpa_deptos
 CREATE TABLE IF NOT EXISTS `crmpa_deptos` (
   `id` int(11) DEFAULT NULL,
   `nombre` varchar(254) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla crm_bpo.crmpa_deptos: ~33 rows (aproximadamente)
+-- Volcando datos para la tabla crm.crmpa_deptos: ~33 rows (aproximadamente)
 DELETE FROM `crmpa_deptos`;
 /*!40000 ALTER TABLE `crmpa_deptos` DISABLE KEYS */;
 INSERT INTO `crmpa_deptos` (`id`, `nombre`) VALUES
@@ -2664,7 +2664,7 @@ INSERT INTO `crmpa_deptos` (`id`, `nombre`) VALUES
 	(33, 'VICHADA	');
 /*!40000 ALTER TABLE `crmpa_deptos` ENABLE KEYS */;
 
--- Volcando estructura para tabla crm_bpo.crmpa_empresa
+-- Volcando estructura para tabla crm.crmpa_empresa
 CREATE TABLE IF NOT EXISTS `crmpa_empresa` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(100) NOT NULL,
@@ -2676,7 +2676,7 @@ CREATE TABLE IF NOT EXISTS `crmpa_empresa` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla crm_bpo.crmpa_empresa: ~3 rows (aproximadamente)
+-- Volcando datos para la tabla crm.crmpa_empresa: ~3 rows (aproximadamente)
 DELETE FROM `crmpa_empresa`;
 /*!40000 ALTER TABLE `crmpa_empresa` DISABLE KEYS */;
 INSERT INTO `crmpa_empresa` (`id`, `nombre`, `estado`, `ncampanas`, `fecha_creacion`, `descripcion`) VALUES
@@ -2687,7 +2687,7 @@ INSERT INTO `crmpa_empresa` (`id`, `nombre`, `estado`, `ncampanas`, `fecha_creac
 	(15, 'AVANTEL', 0, NULL, '2018-06-07 13:44:12', '');
 /*!40000 ALTER TABLE `crmpa_empresa` ENABLE KEYS */;
 
--- Volcando estructura para tabla crm_bpo.crmpa_encuesta_1
+-- Volcando estructura para tabla crm.crmpa_encuesta_1
 CREATE TABLE IF NOT EXISTS `crmpa_encuesta_1` (
   `id_encuesta` int(11) NOT NULL AUTO_INCREMENT,
   `id_cl` int(11) DEFAULT NULL,
@@ -2712,7 +2712,7 @@ CREATE TABLE IF NOT EXISTS `crmpa_encuesta_1` (
   PRIMARY KEY (`id_encuesta`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla crm_bpo.crmpa_encuesta_1: ~7 rows (aproximadamente)
+-- Volcando datos para la tabla crm.crmpa_encuesta_1: ~7 rows (aproximadamente)
 DELETE FROM `crmpa_encuesta_1`;
 /*!40000 ALTER TABLE `crmpa_encuesta_1` DISABLE KEYS */;
 INSERT INTO `crmpa_encuesta_1` (`id_encuesta`, `id_cl`, `id_calif`, `fecha_in`, `encuesta_1`, `encuesta_2`, `encuesta_3`, `encuesta_4`, `encuesta_5`, `encuesta_6`, `encuesta_7`, `encuesta_8`, `encuesta_9`, `encuesta_10`, `encuesta_11`, `encuesta_12`, `encuesta_13`, `encuesta_14`, `encuesta_15`, `encuesta_16`) VALUES
@@ -2731,7 +2731,7 @@ INSERT INTO `crmpa_encuesta_1` (`id_encuesta`, `id_cl`, `id_calif`, `fecha_in`, 
 	(7, 3, 0, '2018-06-13 00:21:38', '2018-06-12', 'CALLE ', '32', 'CALLE ', '32', 'URBANIZACION', '32', 'APTARTAMENTO ', '32', '3', '149', '23', 'NORTE', 'CASA', '23', 'COMPLETO');
 /*!40000 ALTER TABLE `crmpa_encuesta_1` ENABLE KEYS */;
 
--- Volcando estructura para tabla crm_bpo.crmpa_guiones
+-- Volcando estructura para tabla crm.crmpa_guiones
 CREATE TABLE IF NOT EXISTS `crmpa_guiones` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `idserv` int(11) DEFAULT NULL,
@@ -2740,7 +2740,7 @@ CREATE TABLE IF NOT EXISTS `crmpa_guiones` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla crm_bpo.crmpa_guiones: ~2 rows (aproximadamente)
+-- Volcando datos para la tabla crm.crmpa_guiones: ~2 rows (aproximadamente)
 DELETE FROM `crmpa_guiones`;
 /*!40000 ALTER TABLE `crmpa_guiones` DISABLE KEYS */;
 INSERT INTO `crmpa_guiones` (`id`, `idserv`, `guion`, `Mostrar`) VALUES
@@ -2749,7 +2749,7 @@ INSERT INTO `crmpa_guiones` (`id`, `idserv`, `guion`, `Mostrar`) VALUES
 	(3, 8, 'Bienvenido ACSOIN CRM', 'N');
 /*!40000 ALTER TABLE `crmpa_guiones` ENABLE KEYS */;
 
--- Volcando estructura para tabla crm_bpo.crmpa_modulo_1
+-- Volcando estructura para tabla crm.crmpa_modulo_1
 CREATE TABLE IF NOT EXISTS `crmpa_modulo_1` (
   `id_modulo` int(11) NOT NULL AUTO_INCREMENT,
   `paso_now` int(11) NOT NULL DEFAULT '1',
@@ -2928,7 +2928,7 @@ CREATE TABLE IF NOT EXISTS `crmpa_modulo_1` (
   PRIMARY KEY (`id_modulo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla crm_bpo.crmpa_modulo_1: ~7 rows (aproximadamente)
+-- Volcando datos para la tabla crm.crmpa_modulo_1: ~7 rows (aproximadamente)
 DELETE FROM `crmpa_modulo_1`;
 /*!40000 ALTER TABLE `crmpa_modulo_1` DISABLE KEYS */;
 INSERT INTO `crmpa_modulo_1` (`id_modulo`, `paso_now`, `id_cl`, `id_calif`, `scoreG`, `nline`, `fecha_in`, `doc_sus`, `name_sus`, `apel_sus`, `fec_nac_sus`, `fec_exp_sus`, `barrio_sus`, `email_sus`, `dir1_sus`, `dir2_sus`, `dir3_sus`, `dir4_sus`, `dir5_sus`, `dir6_sus`, `dir7_sus`, `dir8_sus`, `dept_sus`, `ciud_sus`, `doc_sus1`, `name_sus1`, `apel_sus1`, `tipo_1`, `linea_1`, `otro_1`, `nip_1`, `operador_1`, `tipservice1`, `planservice1`, `infoservice1`, `service1`, `fecha_venta_1`, `obs_1`, `doc_sus2`, `name_sus2`, `apel_sus2`, `tipo_2`, `linea_2`, `otro_2`, `nip_2`, `operador_2`, `tipservice2`, `planservice2`, `infoservice2`, `service2`, `fecha_venta_2`, `obs_2`, `doc_sus3`, `name_sus3`, `apel_sus3`, `tipo_3`, `linea_3`, `otro_3`, `nip_3`, `operador_3`, `tipservice3`, `planservice3`, `infoservice3`, `service3`, `fecha_venta_3`, `obs_3`, `doc_sus4`, `name_sus4`, `apel_sus4`, `tipo_4`, `linea_4`, `otro_4`, `nip_4`, `operador_4`, `tipservice4`, `planservice4`, `infoservice4`, `service4`, `fecha_venta_4`, `obs_4`, `doc_sus5`, `name_sus5`, `apel_sus5`, `tipo_5`, `linea_5`, `otro_5`, `nip_5`, `operador_5`, `tipservice5`, `planservice5`, `infoservice5`, `service5`, `fecha_venta_5`, `obs_5`, `doc_sus6`, `name_sus6`, `apel_sus6`, `tipo_6`, `linea_6`, `otro_6`, `nip_6`, `operador_6`, `tipservice6`, `planservice6`, `infoservice6`, `service6`, `fecha_venta_6`, `obs_6`, `doc_sus7`, `name_sus7`, `apel_sus7`, `tipo_7`, `linea_7`, `otro_7`, `nip_7`, `operador_7`, `tipservice7`, `planservice7`, `infoservice7`, `service7`, `fecha_venta_7`, `obs_7`, `doc_sus8`, `name_sus8`, `apel_sus8`, `tipo_8`, `linea_8`, `otro_8`, `nip_8`, `operador_8`, `tipservice8`, `planservice8`, `infoservice8`, `service8`, `fecha_venta_8`, `obs_8`, `doc_sus9`, `name_sus9`, `apel_sus9`, `tipo_9`, `linea_9`, `otro_9`, `nip_9`, `operador_9`, `tipservice9`, `planservice9`, `infoservice9`, `service9`, `fecha_venta_9`, `obs_9`, `doc_sus10`, `name_sus10`, `apel_sus10`, `tipo_10`, `linea_10`, `otro_10`, `nip_10`, `operador_10`, `tipservice10`, `planservice10`, `infoservice10`, `service10`, `fecha_venta_10`, `obs_10`, `back_fec1`, `back1`, `back_obs1`, `back_fec2`, `back2`, `back_obs2`, `back_fec3`, `back3`, `back_obs3`, `id_serv`) VALUES
@@ -2947,7 +2947,7 @@ INSERT INTO `crmpa_modulo_1` (`id_modulo`, `paso_now`, `id_cl`, `id_calif`, `sco
 	(10, 1, 3, 0, 'A', 1, '2018-06-13 00:21:38', '8', '6787', '6', '2019-07-05', '2018-06-12', '876', '87', 'CARRERA ', '687', 'CALLE ', '876', 'URBANIZACION', '687', 'MANZANA ', '876', '2', '128', '876', '876', '87', 'LINEA NUEVA', '6', '876', '876', 'CLARO', 'CORPORATIVO', '10', '150 MIN ; 500 SMS ; 2,5 GB EN 4G', 'VOZ Y DATOS', '2018-06-12', '87687', '', '', '', '', '', '', '', '', '', '', '', '', '2018-06-12', '', '', '', '', '', '', '', '', '', '', '', '', '', '2018-06-12', '', '', '', '', '', '', '', '', '', '', '', '', '', '2018-06-12', '', '', '', '', '', '', '', '', '', '', '', '', '', '2018-06-12', '', '', '', '', '', '', '', '', '', '', '', '', '', '2018-06-12', '', '', '', '', '', '', '', '', '', '', '', '', '', '2018-06-12', '', '', '', '', '', '', '', '', '', '', '', '', '', '2018-06-12', '', '', '', '', '', '', '', '', '', '', '', '', '', '2018-06-12', '', '', '', '', '', '', '', '', '', '', '', '', '', '2018-06-12', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 7);
 /*!40000 ALTER TABLE `crmpa_modulo_1` ENABLE KEYS */;
 
--- Volcando estructura para tabla crm_bpo.crmpa_perfiles
+-- Volcando estructura para tabla crm.crmpa_perfiles
 CREATE TABLE IF NOT EXISTS `crmpa_perfiles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `perfil` varchar(100) NOT NULL,
@@ -2956,7 +2956,7 @@ CREATE TABLE IF NOT EXISTS `crmpa_perfiles` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla crm_bpo.crmpa_perfiles: ~3 rows (aproximadamente)
+-- Volcando datos para la tabla crm.crmpa_perfiles: ~3 rows (aproximadamente)
 DELETE FROM `crmpa_perfiles`;
 /*!40000 ALTER TABLE `crmpa_perfiles` DISABLE KEYS */;
 INSERT INTO `crmpa_perfiles` (`id`, `perfil`, `estado`) VALUES
@@ -2967,14 +2967,14 @@ INSERT INTO `crmpa_perfiles` (`id`, `perfil`, `estado`) VALUES
 	(3, 'Backoffices', 1);
 /*!40000 ALTER TABLE `crmpa_perfiles` ENABLE KEYS */;
 
--- Volcando estructura para tabla crm_bpo.crmpa_permisos
+-- Volcando estructura para tabla crm.crmpa_permisos
 CREATE TABLE IF NOT EXISTS `crmpa_permisos` (
   `id_usuario` int(11) NOT NULL,
   `id_perfil` int(11) NOT NULL,
   `id_empresa` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla crm_bpo.crmpa_permisos: ~12 rows (aproximadamente)
+-- Volcando datos para la tabla crm.crmpa_permisos: ~12 rows (aproximadamente)
 DELETE FROM `crmpa_permisos`;
 /*!40000 ALTER TABLE `crmpa_permisos` DISABLE KEYS */;
 INSERT INTO `crmpa_permisos` (`id_usuario`, `id_perfil`, `id_empresa`) VALUES
@@ -3003,7 +3003,7 @@ INSERT INTO `crmpa_permisos` (`id_usuario`, `id_perfil`, `id_empresa`) VALUES
 	(18, 2, '14');
 /*!40000 ALTER TABLE `crmpa_permisos` ENABLE KEYS */;
 
--- Volcando estructura para tabla crm_bpo.crmpa_servicio
+-- Volcando estructura para tabla crm.crmpa_servicio
 CREATE TABLE IF NOT EXISTS `crmpa_servicio` (
   `id_serv` int(11) NOT NULL AUTO_INCREMENT,
   `servicio` varchar(150) DEFAULT NULL,
@@ -3014,7 +3014,7 @@ CREATE TABLE IF NOT EXISTS `crmpa_servicio` (
   PRIMARY KEY (`id_serv`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla crm_bpo.crmpa_servicio: ~2 rows (aproximadamente)
+-- Volcando datos para la tabla crm.crmpa_servicio: ~2 rows (aproximadamente)
 DELETE FROM `crmpa_servicio`;
 /*!40000 ALTER TABLE `crmpa_servicio` DISABLE KEYS */;
 INSERT INTO `crmpa_servicio` (`id_serv`, `servicio`, `estado`, `emp_id`, `descripcion`, `fecha_creacion`) VALUES
@@ -3023,7 +3023,7 @@ INSERT INTO `crmpa_servicio` (`id_serv`, `servicio`, `estado`, `emp_id`, `descri
 	(8, 'OUT2', 1, 15, 'd', '2018-06-12 23:51:58');
 /*!40000 ALTER TABLE `crmpa_servicio` ENABLE KEYS */;
 
--- Volcando estructura para tabla crm_bpo.crmpa_usuarios
+-- Volcando estructura para tabla crm.crmpa_usuarios
 CREATE TABLE IF NOT EXISTS `crmpa_usuarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user` varchar(150) NOT NULL,
@@ -3037,7 +3037,7 @@ CREATE TABLE IF NOT EXISTS `crmpa_usuarios` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla crm_bpo.crmpa_usuarios: ~12 rows (aproximadamente)
+-- Volcando datos para la tabla crm.crmpa_usuarios: ~12 rows (aproximadamente)
 DELETE FROM `crmpa_usuarios`;
 /*!40000 ALTER TABLE `crmpa_usuarios` DISABLE KEYS */;
 INSERT INTO `crmpa_usuarios` (`id`, `user`, `password`, `nombre`, `apellido`, `estado`, `fecha_creacion`, `email`) VALUES
