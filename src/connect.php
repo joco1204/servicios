@@ -4,9 +4,9 @@ try {
 	/*$dsn = 'mysql:host=172.246.126.64;dbname=crm_bpo';
 	$nombre_usuario = 'root';
 	$contraseña = 'Aur4N01r3*Sm4rtS0lut10nS3rv1c3';*/
-	$dsn = 'mysql:host=localhost;dbname=crm_bpo';
+	$dsn = 'mysql:host=localhost;dbname=crm';
 	$nombre_usuario = 'root';
-	$contraseña = '';
+	$contraseña = '12345';
 	$opciones = array(
 	    PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
 	);
